@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIÁVEIS */
+:root {
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --text: #0f172a;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+}
+
+/* BODY */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+  color: var(--text);
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-top: 8px;
+}
+
+/* CONTAINER LOGIN */
+.container-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* FORM */
+form {
+  background: var(--card);
+  padding: 30px;
+  border-radius: 14px;
+  width: 320px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* TÍTULO */
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--primary);
+}
+
+/* BOTÃO */
+button {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+/* LINK */
+a {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--primary);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER PADRÃO -->
+<div class="header">
+  <h1>Projeto Guarda Municipal</h1>
+  <p>Acesse sua conta para continuar</p>
+</div>
+
+<div class="container-login">
+
+<form method="POST">
+  <h2>Login</h2>
+
+  <input type="text" name="usuario" placeholder="Usuário" required>
+  <input type="password" name="senha" placeholder="Senha" required>
+
+  <button type="submit">Entrar</button>
+
+  <a href="/register">Criar conta</a>
+</form>
+
+</div>
+
+</body>
+</html>
