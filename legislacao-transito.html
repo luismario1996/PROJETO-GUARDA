@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projeto Guarda Municipal</title>
 
-<!-- Fonte profissional -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Língua Portuguesa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,117 +15,160 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none;
 }
 
-/* CORES */
+/* VARIÁVEIS */
 :root {
-  --cor-primaria: #4a6cf7;
-  --cor-hover: #3b5be0;
-  --cor-fundo: #f5f7fa;
-  --cor-texto: #1f2937;
-  --cor-branco: #ffffff;
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --text: #0f172a;
+  --text-light: #64748b;
+  --border: #e2e8f0;
 }
 
 /* BODY */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: var(--cor-fundo);
-  color: var(--cor-texto);
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+  color: var(--text);
 }
 
-/* CONTAINER PRINCIPAL */
+/* CONTAINER */
 main {
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
-/* TOPO */
-.container1 {
-  max-width: 700px;
+/* HEADER */
+.header {
+  max-width: 900px;
   margin: auto;
-  background: var(--cor-branco);
-  padding: 30px;
-  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-.container1 h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
+.header h1 {
+  font-size: 30px;
+  font-weight: 700;
 }
 
-.container1 h2 {
-  font-size: 18px;
-  color: var(--cor-primaria);
-  margin-bottom: 10px;
+.header h2 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary);
+  margin-top: 8px;
 }
 
-.container1 p {
+.header p {
   font-size: 14px;
-  color: #6b7280;
+  color: var(--text-light);
+  margin-top: 10px;
 }
 
-/* GRID DE MATÉRIAS */
-.container2 {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-/* CARDS */
-.box-generico {
-  background: var(--cor-branco);
-  padding: 25px;
-  border-radius: 12px;
-  width: 250px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+/* BOTÃO VOLTAR */
+.voltar {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+  font-size: 14px;
   transition: 0.3s;
 }
 
-.box-generico:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+.voltar:hover {
+  background: var(--primary-hover);
 }
 
-/* LINKS */
-.box-generico a {
-  color: var(--cor-texto);
+/* GRID */
+.grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  padding: 22px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  transition: 0.3s;
+  position: relative;
+}
+
+/* LINHA SUPERIOR */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: var(--primary);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* HOVER */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+/* LINK */
+.card a {
+  text-decoration: none;
+  color: var(--text);
   font-weight: 600;
+  font-size: 15px;
+  display: block;
+  line-height: 1.4;
 }
 
-.box-generico a:hover {
-  color: var(--cor-primaria);
+.card a span {
+  display: block;
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+/* HOVER TEXTO */
+.card:hover a {
+  color: var(--primary);
 }
 
 /* FOOTER */
 footer {
-  text-align: center;
+  margin-top: 60px;
   padding: 30px;
-  margin-top: 40px;
-  background: var(--cor-branco);
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  border-top: 1px solid var(--border);
 }
 
 footer h1 {
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 16px;
 }
 
 footer p {
   font-size: 13px;
-  color: #6b7280;
+  color: var(--text-light);
+  margin-top: 5px;
 }
 
 /* RESPONSIVO */
-@media (max-width: 768px) {
-  .box-generico {
-    width: 100%;
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 24px;
   }
 }
 
@@ -136,20 +179,20 @@ footer p {
 
 <main>
 
-<div class="container1">
-  <h1>Estudos Programáticos para Concurso 2026</h1>
-  <h2>Guarda Municipal de Manaus</h2>
-  <h2 style="color: rgba(0, 0, 0, 0.685);">Legislação De Trânsito</h2>
+<div class="header">
+  <h1>Legislação De Trânsito</h1>
+  <h2>Conteúdo Programático</h2>
+  <p>Selecione um tópico para iniciar seus estudos</p>
 
+  <a href="./index.html" class="voltar">← Voltar</a>
 </div>
 
-<div class="container2">
+<div class="grid">
 
-<div class="box-generico"><a href="">1.1 Lei nº 9.503/1997 (Código de Trânsito Brasileiro). Resolução CONTRAN nº 985, de 15 de dezembro de 2022, incluído seu Anexo
-(Manual Brasileiro de Fiscalização de Trânsito)</a></div>
+<div class="card"><a href="#">1.1  Lei nº 9.503/1997 (Código de Trânsito Brasileiro). Resolução CONTRAN nº 985, de 15 de dezembro de 2022, incluído seu Anexo
+(Manual Brasileiro de Fiscalização de Trânsito)</span></a></div>
 
 
-<div class="box-generico"><a href="./index.html">Voltar</a></div>
 
 </div>
 
