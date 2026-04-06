@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeto Guarda Municipal</title>
+
+<!-- Fonte profissional -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* CORES */
+:root {
+  --cor-primaria: #4a6cf7;
+  --cor-hover: #3b5be0;
+  --cor-fundo: #f5f7fa;
+  --cor-texto: #1f2937;
+  --cor-branco: #ffffff;
+}
+
+/* BODY */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+/* CONTAINER PRINCIPAL */
+main {
+  padding: 40px 20px;
+}
+
+/* TOPO */
+.container1 {
+  max-width: 700px;
+  margin: auto;
+  background: var(--cor-branco);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.container1 h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.container1 h2 {
+  font-size: 18px;
+  color: var(--cor-primaria);
+  margin-bottom: 10px;
+}
+
+.container1 p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* GRID DE MATÉRIAS */
+.container2 {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* CARDS */
+.box-generico {
+  background: var(--cor-branco);
+  padding: 25px;
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.box-generico:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* LINKS */
+.box-generico a {
+  color: var(--cor-texto);
+  font-weight: 600;
+}
+
+.box-generico a:hover {
+  color: var(--cor-primaria);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  margin-top: 40px;
+  background: var(--cor-branco);
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+}
+
+footer h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  .box-generico {
+    width: 100%;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<main>
+
+<div class="container1">
+  <h1>Estudos Programáticos para Concurso 2026</h1>
+  <h2>Guarda Municipal de Manaus</h2>
+  <h2 style="color: rgba(0, 0, 0, 0.685);">Lingua Portuguesa</h2>
+
+</div>
+
+<div class="container2">
+
+<div class="box-generico"><a href="">Compreensão e interpretação de textos</a></div>
+<div class="box-generico"><a href="">Tipologia textual</a></div>
+<div class="box-generico"><a href="">Ortografia oficia</a></div>
+<div class="box-generico"><a href="">Acentuação gráfica</a></div>
+<div class="box-generico"><a href="">Emprego das classes de palavras</a></div>
+<div class="box-generico"><a href="">Emprego do sinal indicativo de crase</a></div>
+<div class="box-generico"><a href="">Pontuação</a></div>
+<div class="box-generico"><a href="">Concordância nominal e verba</a></div>
+<div class="box-generico"><a href="">Regência nominal e verbal</a></div>
+<div class="box-generico"><a href="">Semântica</a></div>
+<div class="box-generico"><a href="">Redação oficial</a></div>
+<div class="box-generico"><a href="./site.html">Voltar</a></div>
+
+</div>
+
+</main>
+
+<footer>
+  <h1>Projeto Guarda Municipal</h1>
+  <p>Desenvolvido por Luis Mario Fernandes de Oliveira © 2026</p>
+</footer>
+
+</body>
+</html>
