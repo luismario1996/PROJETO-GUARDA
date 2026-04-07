@@ -186,4 +186,5 @@ margin-bottom: 25px;
 
 }
 
-.logo-do-site {width: 250px;}
+.logo-do-site {max-width: 250px;
+}
