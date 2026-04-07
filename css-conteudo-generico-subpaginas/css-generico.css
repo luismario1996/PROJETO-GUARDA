@@ -27,8 +27,8 @@ body {
 /* HEADER */
 .header {
   text-align: center;
-  margin-top: 50px;
-  margin-bottom: 30px;
+
+
 }
 
 .header h1 {
@@ -141,7 +141,6 @@ span   {
 flex-direction: row;
 align-items: end;
 justify-content: end;
-margin-bottom: 25px;
 gap:20px;}
 
 pre {
@@ -178,9 +177,15 @@ margin: 10px;
 }
 
 .menu-navegacao {
+
 text-align: center;
 margin: auto;
-max-width: 400px;
+max-width: 500px;
 margin-bottom: 25px;
-  
+
+
 }
+
+.logo-do-site {max-width: 250px;
+margin: 0px;
+padding: 0px;}
