@@ -61,12 +61,12 @@ main {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 18px;
-  border-radius: 8px;
   background: var(--primary);
   color: white;
-  font-size: 14px;
-  transition: 0.3s;
+  border-radius: 8px;
+  text-decoration: none;
 }
+
 
 .voltar:hover {
   background: var(--primary-hover);
