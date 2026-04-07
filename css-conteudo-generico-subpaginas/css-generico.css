@@ -140,6 +140,7 @@ span   {
 .centralizar {display: flex;
 flex-direction: row;
 align-items: end;
+
 justify-content: end;
 gap:20px;}
 

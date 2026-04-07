@@ -1,0 +1,130 @@
+
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIÁVEIS PROFISSIONAIS */
+:root {
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --text: #0f172a;
+  --text-light: #64748b;
+  --border: #e2e8f0;
+}
+
+/* BODY */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+  color: var(--text);
+}
+
+
+/* HEADER */
+.header {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 15px;
+  color: var(--text-light);
+}
+
+/* GRID */
+.grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* LINHA DE DESTAQUE */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: var(--primary);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* HOVER */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* TEXTO CARD */
+.card a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 16px;
+  display: block;
+  transition: 0.3s;
+}
+
+.card a span {
+  display: block;
+  font-size: 13px;
+  color: var(--text-light);
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+/* HOVER TEXTO */
+.card:hover a {
+  color: var(--primary);
+}
+
+
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 24px;
+  }
+}
+
+

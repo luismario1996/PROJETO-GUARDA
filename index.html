@@ -8,153 +8,9 @@
 
 <!-- Fonte Premium -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../PROJETO-GUARDA/css-conteudo-index/css-genericooo.css">
+<link rel="stylesheet" href="../PROJETO-GUARDA/css-generico-footer/css-generico-foooter.css">
 
-<style>
-
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* VARIÁVEIS PROFISSIONAIS */
-:root {
-  --bg: #f1f5f9;
-  --card: #ffffff;
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --text: #0f172a;
-  --text-light: #64748b;
-  --border: #e2e8f0;
-}
-
-/* BODY */
-body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, #f8fafc, #eef2ff);
-  color: var(--text);
-}
-
-
-/* HEADER */
-.header {
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.header h1 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.header h2 {
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--primary);
-  margin-bottom: 10px;
-}
-
-.header p {
-  font-size: 15px;
-  color: var(--text-light);
-}
-
-/* GRID */
-.grid {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-}
-
-/* CARD */
-.card {
-  background: var(--card);
-  padding: 25px;
-  border-radius: 16px;
-  border: 1px solid var(--border);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* LINHA DE DESTAQUE */
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 100%;
-  background: var(--primary);
-  opacity: 0;
-  transition: 0.3s;
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-/* HOVER */
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-}
-
-/* TEXTO CARD */
-.card a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 600;
-  font-size: 16px;
-  display: block;
-  transition: 0.3s;
-}
-
-.card a span {
-  display: block;
-  font-size: 13px;
-  color: var(--text-light);
-  font-weight: 400;
-  margin-top: 5px;
-}
-
-/* HOVER TEXTO */
-.card:hover a {
-  color: var(--primary);
-}
-
-/* FOOTER */
-footer {
-  margin-top: 60px;
-  padding: 30px;
-  text-align: center;
-  border-top: 1px solid var(--border);
-}
-
-footer h1 {
-  font-size: 16px;
-  margin-bottom: 5px;
-}
-
-footer p {
-  font-size: 13px;
-  color: var(--text-light);
-}
-
-/* RESPONSIVO */
-@media (max-width: 600px) {
-  .header h1 {
-    font-size: 24px;
-  }
-}
-
-</style>
 </head>
 
 <body>
@@ -162,7 +18,7 @@ footer p {
 <main>
 
 <div class="header">
- <img width="350px"  src="../PROJETO-GUARDA/logo/Corujex.png" alt="">
+ <img width="250px"  src="../PROJETO-GUARDA/logo/Corujex.png" alt="">
   <p>Escolha uma disciplina para iniciar seus estudos</p>
 </div>
 
@@ -185,6 +41,8 @@ footer p {
 <div class="card"><a href="./legislacao-transito.html">Legislação de Trânsito <span>Normas e regras</span></a></div>
 
 <div class="card"><a href="./legislacao-especifica.html">Legislação Específica Indisponível <span>Normas da Guarda Municipal</span></a></div>
+
+<div class="card"><a href="../PROJETO-GUARDA/redacao.html">Redação<span>Norma Culta Da Língua</span></a></div>
 <div class="card"><a href="https://www.pciconcursos.com.br/simulados/" target="_blank">Treine Questões <span> Teste De Conhecimentos</span></a></div>
 <div class="card"><a href="https://www.pciconcursos.com.br/provas/" target="_blank">Treine com provas reais <span> Teste De Conhecimentos</span></a></div>
 
@@ -192,8 +50,50 @@ footer p {
 
 </main>
 
-<footer>
-   <p>Desenvolvido por Luis Mario Fernandes de Oliveira, e os conteúdos são de direitos dos próprios autores aqui disponíveis em divulgação, 2026.</p>
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-brand">
+      <img src="../PROJETO-GUARDA/logo/Corujex.png" alt="Corujex" class="logo-footer">
+      <p>
+        Corujex é uma plataforma para todos os tipos de concurseiros que desejam aprender, revisar e praticar muito!
+      </p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Foco</h3>
+      <p>Aprendizado contínuo</p>
+      <p>Prática diária</p>
+      <p>Revisões estratégicas</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Motivação</h3>
+      <p>Erros fazem parte do processo</p>
+      <p>Persistência leva à aprovação</p>
+      <p>Disciplina é o diferencial</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Atualizações</h3>
+      <p>Plataforma em constante evolução</p>
+      <p>Novos conteúdos em breve</p>
+      <p>Melhorias contínuas</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      Desenvolvido por <strong>Luis Mario Fernandes de Oliveira</strong>
+    </p>
+
+    <p class="creditos">
+      Os conteúdos são de direitos dos próprios autores e estão disponíveis apenas para fins de divulgação educacional.
+    </p>
+  </div>
+
 </footer>
 
 </body>
