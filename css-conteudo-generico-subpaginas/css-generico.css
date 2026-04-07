@@ -139,8 +139,8 @@ span   {
 
 .centralizar {display: flex;
 flex-direction: row;
-align-items: center;
-justify-content: center;
+align-items: end;
+justify-content: end;
 margin-bottom: 25px;
 gap:20px;}
 
@@ -175,4 +175,14 @@ max-width: 500px;
 padding: 10px;
 margin: 10px;
 
+}
+
+.menu-navegacao {
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+margin-bottom: 25px;
+gap:20px;
+  
 }
