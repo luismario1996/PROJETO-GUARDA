@@ -100,13 +100,19 @@ iframe {
 
 /* FOOTER */
 footer {
-  text-align: center;
-  margin-top: 50px;
+  margin-top: 60px;
   padding: 30px;
+  text-align: center;
   border-top: 1px solid var(--border);
 }
 
+footer h1 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
 footer p {
+  font-size: 13px;
   color: var(--text-light);
 }
 
