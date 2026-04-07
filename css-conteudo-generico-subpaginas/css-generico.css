@@ -140,9 +140,8 @@ span   {
 .centralizar {display: flex;
 flex-direction: row;
 align-items: end;
-
-justify-content: end;
-gap:20px;}
+margin-bottom: 10px;
+justify-content: end;}
 
 pre {
   white-space: pre-wrap;     /* quebra linha automaticamente */
@@ -183,6 +182,7 @@ text-align: center;
 margin: auto;
 max-width: 500px;
 margin-bottom: 25px;
+
 
 
 }
