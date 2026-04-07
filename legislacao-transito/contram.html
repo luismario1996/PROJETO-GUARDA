@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CTB</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIÁVEIS */
+:root {
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --primary: #4f46e5;
+  --text: #0f172a;
+  --border: #e2e8f0;
+}
+
+/* BODY */
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* CARD */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 20px;
+}
+
+/* PDF CONTAINER */
+.pdf-wrapper {
+  position: relative;
+}
+
+.pdf-container {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+/* FULLSCREEN */
+.pdf-container.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  border-radius: 0;
+}
+
+/* IFRAME */
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* BOTÃO FULLSCREEN */
+.full-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--primary);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* FAVORITOS */
+.favoritos {
+  margin-top: 20px;
+}
+
+.favoritos button {
+  padding: 8px 12px;
+  margin: 5px;
+  border: none;
+  background: #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.favoritos button.active {
+  background: gold;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>Código de Trânsito Brasileiro</h1>
+</div>
+
+<div class="card">
+
+<h2>📄 Lei Completa</h2>
+
+<div class="pdf-wrapper">
+
+  <div class="full-btn" onclick="toggleFull()">⛶ Tela cheia</div>
+
+  <div class="pdf-container" id="pdfBox">
+    <!-- remove barra do PDF -->
+    <iframe src="CTB2015.pdf"></iframe>
+  </div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>⭐ Marcar artigos importantes</h2>
+
+<div class="favoritos">
+
+<button onclick="favoritar(this)">Art. 1</button>
+<button onclick="favoritar(this)">Art. 5</button>
+<button onclick="favoritar(this)">Art. 10</button>
+<button onclick="favoritar(this)">Art. 20</button>
+
+</div>
+
+</div>
+
+<footer>
+  <p>Projeto Guarda Municipal © 2026</p>
+</footer>
+
+<script>
+
+/* FULLSCREEN */
+function toggleFull() {
+  const box = document.getElementById("pdfBox");
+  box.classList.toggle("fullscreen");
+}
+
+/* FAVORITOS */
+function favoritar(btn) {
+  btn.classList.toggle("active");
+}
+
+</script>
+
+</body>
+</html>
