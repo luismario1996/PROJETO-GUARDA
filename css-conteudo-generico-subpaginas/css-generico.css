@@ -178,11 +178,9 @@ margin: 10px;
 }
 
 .menu-navegacao {
-display: flex;
-flex-direction: row;
-align-items: center;
-justify-content: center;
+text-align: center;
+margin: auto;
+max-width: 400px;
 margin-bottom: 25px;
-gap:20px;
   
 }
