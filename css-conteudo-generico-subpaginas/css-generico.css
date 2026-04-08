@@ -141,7 +141,7 @@ span   {
 flex-direction: row;
 align-items: end;
 margin-bottom: 10px;
-gap: 20px;
+gap: 3px;
 justify-content: end;}
 
 pre {
@@ -185,10 +185,10 @@ color: black;}
 
 .menu-navegacao {
 
-text-align: center;
-margin: auto;
-max-width: 500px;
-margin-bottom: 25px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 3px;
 
 
 
