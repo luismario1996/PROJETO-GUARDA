@@ -141,6 +141,7 @@ span   {
 flex-direction: row;
 align-items: end;
 margin-bottom: 10px;
+gap: 20px;
 justify-content: end;}
 
 pre {
@@ -165,16 +166,22 @@ code {
   justify-content: center;
 flex-wrap: wrap;
 padding: 10px;
+
+
 }
 
 .conjunto-paginas-generico {
   border-radius: 10px;
  border: 1px solid rgba(0, 0, 0, 0.164);
-max-width: 500px;
+font-family: 'Courier New', Courier, monospace;
+font-style:oblique;
+
 padding: 10px;
 margin: 10px;
 
 }
+a {text-decoration: none;
+color: black;}
 
 .menu-navegacao {
 
