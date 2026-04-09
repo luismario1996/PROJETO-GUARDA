@@ -39,7 +39,7 @@ margin-bottom: 60px;
 .header h1 {
   font-size: 30px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .header h2 {
@@ -52,6 +52,7 @@ margin-bottom: 60px;
 .header p {
   font-size: 14px;
   color: var(--text-light);
+  margin-bottom: 10px;
  
 
 
