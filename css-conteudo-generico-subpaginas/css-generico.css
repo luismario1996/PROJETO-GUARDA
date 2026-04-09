@@ -192,7 +192,11 @@ color: black;}
 display: flex;
 align-items: center;
 justify-content: center;
-gap: 2px;}
+gap: 2px;
+}
 
-.menu-navegacao a {padding: 10px 5px 10px 5px;}
+nav.menu-navegacao {margin-top: 20px;}
+
+.menu-navegacao a {
+  padding: 10px 5px 10px 5px;}
 
