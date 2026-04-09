@@ -141,7 +141,7 @@ span   {
 
 
 .centralizar {display: flex;
-flex-direction: row;
+flex-direction: column;
 align-items: end;
 margin-bottom: 10px;
 gap: 3px;
