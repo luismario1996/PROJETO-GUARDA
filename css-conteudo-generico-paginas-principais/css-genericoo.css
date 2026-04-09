@@ -28,9 +28,11 @@ body {
 
 /* HEADER */
 .header {
-  max-width: 900px;
+  max-width: 600px;
   margin: auto;
   text-align: center;
+
+
   
 }
 
@@ -50,9 +52,8 @@ body {
   font-size: 14px;
   color: var(--text-light);
  
-border: 1px solid var(--text-light);
-max-width: 800px;
-text-align: center;
+
+
 }
 
 /* BOTÃO VOLTAR */
