@@ -53,7 +53,7 @@ main {
   padding: 30px;
   border-radius: 14px;
   border: 1px solid var(--border);
-  margin-bottom: 25px;
+ 
   box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
