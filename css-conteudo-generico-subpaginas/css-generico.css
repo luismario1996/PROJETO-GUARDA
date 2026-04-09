@@ -41,9 +41,10 @@ body {
 
 /* MAIN */
 main {
-  max-width: 900px;
+  max-width: 1100px;
   margin: auto;
   padding: 20px;
+ 
 }
 
 /* CARD */
@@ -90,7 +91,7 @@ iframe {
 /* BOTÃO VOLTAR */
 .voltar {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 7px;
   padding: 10px 18px;
   background: var(--primary);
   color: white;
