@@ -138,6 +138,9 @@ margin-bottom: 60px;
   color: var(--primary);
 }
 
+
+
+
 /* FOOTER */
 footer {
   margin-top: 60px;
@@ -177,3 +180,5 @@ max-width: 1099px;
 
 .centralizar-paginas-principais a {padding: 10px 4px 10px 4px;}
 .menu-navegacao a {padding: 10px 5px 10px 5px;}
+
+.qual-voce-prefere {margin-bottom: 15px;}
