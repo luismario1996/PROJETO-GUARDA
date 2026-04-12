@@ -23,7 +23,14 @@ body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(180deg, #f8fafc, #eef2ff);
   color: var(--text);
+    background-image: url("../logo/Gemini_Generated_Image_sl68lxsl68lxsl68.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  
 }
+
 
 
 /* HEADER */
