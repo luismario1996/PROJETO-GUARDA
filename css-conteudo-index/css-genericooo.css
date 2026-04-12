@@ -31,6 +31,7 @@ main {   background-image: url("../logo/Gemini_Generated_Image_1qskxk1qskxk1qsk.
   background-size: cover;
   background-attachment: fixed;
 
+
     }
 
 
@@ -66,7 +67,8 @@ main {   background-image: url("../logo/Gemini_Generated_Image_1qskxk1qskxk1qsk.
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
+  gap: 30px;
+  padding: 20px;
 }
 
 /* CARD */
