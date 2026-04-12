@@ -23,11 +23,12 @@ body {
   font-family: 'Inter', sans-serif;
   background: linear-gradient(180deg, #f8fafc, #eef2ff);
   color: var(--text);
- background-image: url("../logo/ChatGPT\ Image\ Apr\ 12\,\ 2026\,\ 06_31_19\ PM.png");
+  background-image: url("../logo/ChatGPT\ Image\ Apr\ 12\,\ 2026\,\ 06_31_19\ PM.png"); /* renomeie a imagem */
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
-  background-attachment: fixed;
+
+  min-height: 100vh;
 }
 
 

@@ -25,14 +25,15 @@ body {
   color: var(--text);
  
 }
-main {   background-image: url("../logo/ChatGPT\ Image\ Apr\ 12\,\ 2026\,\ 06_31_19\ PM.png");
+main {
+  background-image: url("../logo/ChatGPT\ Image\ Apr\ 12\,\ 2026\,\ 06_31_19\ PM.png"); /* renomeie a imagem */
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center;
   background-size: cover;
-  background-attachment: fixed;
 
+  min-height: 100vh;
+}
 
-    }
 
 
 /* HEADER */
@@ -140,3 +141,9 @@ main {   background-image: url("../logo/ChatGPT\ Image\ Apr\ 12\,\ 2026\,\ 06_31
 }
 
 .menu-navegacao {padding: 10px 5px 10px 5px;}
+@media (max-width: 768px) {
+  main {
+    background-attachment: scroll; /* remove o efeito bugado */
+    background-position: center top;
+  }
+}
