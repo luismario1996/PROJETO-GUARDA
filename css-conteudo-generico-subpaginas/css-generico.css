@@ -28,12 +28,19 @@ body {
 
 /* HEADER */
 .header {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+
 
 
 }
 
-.titulo h1,p {margin-bottom: 10px;}
+.titulo  h1,p { 
+  
+  margin-bottom: 10px;}
 
 .header h1 {
   font-size: 28px;

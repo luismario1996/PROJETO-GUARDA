@@ -31,7 +31,8 @@ main {padding: 20px;
 }
 
 /* HEADER */
-.header {
+.header {display: flex;
+  flex-direction: column;
   max-width: 600px;
   margin: auto;
   text-align: center;
