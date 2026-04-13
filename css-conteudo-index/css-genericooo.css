@@ -37,9 +37,12 @@ body {
 }
 
 .header h1 {
-  font-size: 32px;
-  font-weight: 700;
-  margin-bottom: 10px;
+    text-decoration: none;
+  color: var(--text);
+  font-weight: 800 bolder;
+  font-size: 25px;
+  display: block;
+  transition: 0.3s;
 }
 
 .header h2 {
@@ -103,12 +106,15 @@ body {
 
 /* TEXTO CARD */
 .card a {
+
   text-decoration: none;
   color: var(--text);
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px;
   display: block;
   transition: 0.3s;
+ 
+
 }
 
 .card a span {
