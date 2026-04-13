@@ -73,6 +73,9 @@ margin-bottom: 60px;
   text-decoration: none;
   background: rgba(0, 0, 255, 0.705);
 }
+.voltar:hover {
+  background: rgba(0, 0, 255, 0.418);
+}
 
 
 
@@ -176,8 +179,18 @@ justify-content: end;}
 
 .centralizar a {padding: 5px 20px 5px 20px;
 }
-.menu-navegacao a {
-  text-decoration: none;
-  margin-right: 60px;}
+.menu-navegacao {
+display: flex;
+flex-wrap: nowrap;
+max-width: 800px;
+align-items: center;
+justify-content: center;
+margin: auto;
+gap: 3px;
+padding: 2px;
+text-align: center;
+margin-bottom: 60px;
+
+}
 
 .qual-voce-prefere {margin-bottom: 15px;}
