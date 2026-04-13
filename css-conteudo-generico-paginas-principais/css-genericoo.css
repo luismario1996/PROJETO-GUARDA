@@ -104,7 +104,6 @@ margin-bottom: 60px;
   left: 0;
   height: 4px;
   width: 100%;
-  background: var(--primary);
   opacity: 0;
   transition: 0.3s;
 }
@@ -135,11 +134,6 @@ margin-bottom: 60px;
   color: var(--text-light);
   margin-top: 6px;
   font-weight: 400;
-}
-
-/* HOVER TEXTO */
-.card:hover a {
-  color: var(--primary);
 }
 
 

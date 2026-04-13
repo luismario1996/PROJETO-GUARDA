@@ -62,6 +62,8 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
   padding: 20px;
+ 
+ 
 }
 
 /* CARD */
@@ -85,7 +87,6 @@ body {
   left: 0;
   height: 4px;
   width: 100%;
-  background: var(--primary);
   opacity: 0;
   transition: 0.3s;
 }
@@ -118,10 +119,6 @@ body {
   margin-top: 5px;
 }
 
-/* HOVER TEXTO */
-.card:hover a {
-  color: var(--primary);
-}
 
 
 
