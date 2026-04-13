@@ -172,7 +172,6 @@ align-items: end;
 margin-bottom: 10px;
 gap: 3px;
 max-width: 1225px;
-
 padding: 20px;
 margin: 0px 0px 4px 0px ;
 justify-content: end;}
@@ -192,6 +191,8 @@ text-align: center;
 margin-bottom: 60px;
 
 }
+
+
 
 .menu-navegacao a{padding: 4px 6px 4px 6px;
 margin: 0px;}
