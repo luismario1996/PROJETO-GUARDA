@@ -40,7 +40,17 @@ body{
 }
 
 /* CONTROLES */
-.controls{text-align:center;}
+.controls{
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: end;
+  padding: 10px;
+max-width: 1100px;
+
+
+
+}
 
 button{
   margin:5px;
@@ -54,7 +64,7 @@ button{
 
 /* BUSCA */
 .search{
-  width:90%;
+  width:75%;
   margin:10px auto;
   display:block;
   padding:8px;
@@ -66,8 +76,10 @@ button{
 .leitura{
   max-width:900px;
   margin:auto;
+
   padding:15px;
-  background:var(--card);
+background-color:whitesmoke;
+border: 10px dashed rgba(0, 0, 0, 0.116);
   border-radius:10px;
   user-select:text;
 }
@@ -103,18 +115,16 @@ button{
   <div class="titulo">
 <h1>Código Brasileiro De Trânsito</h1>
 <p>Código de Trânsito Brasileiro (Lei nº 9.503/1997)</p></div>
- 
 </div>
 
 <div class="guia">
   <p><strong>📌 Como usar:</strong></p>
-  <p>📄 Marque os artigos com o checkbox e clique em <strong>Exportar PDF</strong>.</p>
   <p>✅ Use o checkbox para marcar artigos já estudados.</p>
+  <p>🗑️ Use  o Resetar  para limpar todo o progresso.</p>
 </div>
 
 <div class="controls">
   <button onclick="resetar()">🗑 Reset</button>
-  <button onclick="pdf()">📄 Exportar PDF</button>
 </div>
 
 <input class="search" placeholder="Buscar..." onkeyup="buscar(this.value)">
@@ -132,8 +142,6 @@ button{
 <div class="artigo"><input type="checkbox"><span>Art. 3º Este Código aplica-se a qualquer veículo e condutor.</span></div>
 
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
 
@@ -178,27 +186,6 @@ function resetar(){
     localStorage.clear();
     location.reload();
   }
-}
-
-/* PDF */
-function pdf(){
-  let html="";
-
-  document.querySelectorAll(".artigo").forEach(a=>{
-    if(a.querySelector("input").checked){
-      html+=a.innerHTML+"<br><br>";
-    }
-  });
-
-  if(!html){
-    alert("Marque algum artigo!");
-    return;
-  }
-
-  const temp=document.createElement("div");
-  temp.innerHTML=html;
-
-  html2pdf().from(temp).save("ctb-kindle.pdf");
 }
 
 </script>
