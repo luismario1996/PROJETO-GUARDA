@@ -72,12 +72,12 @@ main{
 }
 
 .leitura{
-  background: var(--card);
+  background: pxvar(--card);
   padding: 25px;
   border-radius: 16px;
 
   /* sombra premium suave */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 
   /* borda elegante */
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -107,6 +107,8 @@ main{
   display:flex;
   gap:10px;
   align-items:flex-start;
+  border: 1px solid rgba(0, 0, 0, 0.075);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   margin-bottom:15px;
   padding:10px;
   border-radius:8px;
@@ -129,7 +131,8 @@ main{
 
 /* CHECK VISUAL ATUALIZADO */
 .artigo.lido pre{
-  background:rgba(0, 243, 0, 0.3);
+  background:rgba(13, 148, 13, 0.637);
   border-radius:8px;
   padding:8px;
+   box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
