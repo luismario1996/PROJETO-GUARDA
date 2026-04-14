@@ -22,13 +22,12 @@ body{
   font-family:'Inter',sans-serif;
   background:var(--bg);
   color:var(--text);
-  overflow:hidden;
 }
 
 /* HEADER */
 .header{text-align:center;padding:15px;}
 
-/* INSTRUÇÕES */
+/* GUIA */
 .guia {
   max-width: 900px;
   margin: 10px auto;
@@ -38,10 +37,6 @@ body{
   border-radius: 8px;
   font-size: 14px;
   line-height: 1.6;
-}
-
-.guia strong {
-  color: var(--primary);
 }
 
 /* CONTROLES */
@@ -67,31 +62,14 @@ button{
   border:1px solid #ccc;
 }
 
-/* PROGRESSO */
-.progress-bar{
-  width:90%;
-  margin:10px auto;
-  height:10px;
-  background:#ddd;
-  border-radius:10px;
-}
-
-.progress{
-  height:100%;
-  background:limegreen;
-  width:0%;
-}
-
 /* LEITURA */
 .leitura{
-  height:60vh;
-  overflow-y:auto;
+  max-width:900px;
+  margin:auto;
   padding:15px;
-  margin:10px;
   background:var(--card);
   border-radius:10px;
   user-select:text;
-  -webkit-overflow-scrolling:touch;
 }
 
 /* ARTIGOS */
@@ -99,10 +77,19 @@ button{
   display:flex;
   gap:10px;
   margin-bottom:15px;
+  padding:10px;
+  border-radius:8px;
+  transition:0.3s;
 }
 
 .artigo span{
   line-height:1.6;
+}
+
+/* CHECKPOINT VISUAL */
+.artigo.lido span{
+  color:#94a3b8;
+  text-decoration: line-through;
 }
 
 /* MARCA TEXTO */
@@ -122,16 +109,11 @@ button{
   <p>Lei nº 9.503/1997</p>
 </div>
 
-<!-- 🔥 GUIA DO USUÁRIO -->
 <div class="guia">
   <p><strong>📌 Como usar:</strong></p>
-
-  <p>🟡 Para marcar em amarelo: selecione um trecho do texto (arrastando o mouse ou usando o dedo) e clique em <strong>"Marcar"</strong>.</p>
-
-  <p>📖 Dica: marque um artigo por vez para melhor organização dos seus estudos.</p>
-
-  <p>📄 Para exportar: selecione os artigos desejados marcando o checkbox ao lado e clique em <strong>"Exportar PDF"</strong>.</p>
-   <p>🗑️ Para Resetar: Basta apenas um clique Em "Resetar" e <strong>"Ok"</strong>.</p>
+  <p>🟡 Selecione o texto e clique em <strong>Marcar</strong>.</p>
+  <p>📄 Marque os artigos com o checkbox e clique em <strong>Exportar PDF</strong>.</p>
+  <p>✅ Use o checkbox para marcar artigos já estudados.</p>
 </div>
 
 <div class="controls">
@@ -141,10 +123,6 @@ button{
 </div>
 
 <input class="search" placeholder="Buscar..." onkeyup="buscar(this.value)">
-
-<div class="progress-bar">
-  <div id="progress" class="progress"></div>
-</div>
 
 <div class="leitura" id="leitura">
 
@@ -170,7 +148,6 @@ function marcar(){
   if(!sel.rangeCount) return;
 
   const range = sel.getRangeAt(0);
-
   const span = document.createElement("span");
   span.className = "highlight";
 
@@ -180,7 +157,7 @@ function marcar(){
     sel.removeAllRanges();
     salvar();
   }catch{
-    alert("Selecione apenas dentro de um mesmo trecho.");
+    alert("Selecione apenas um trecho contínuo.");
   }
 }
 
@@ -194,27 +171,30 @@ window.onload=()=>{
   if(localStorage.getItem("conteudo")){
     leitura.innerHTML = localStorage.getItem("conteudo");
   }
-  checks();
-  progresso();
+  ativarChecks();
 }
 
-/* CHECK */
-function checks(){
-  document.querySelectorAll(".artigo input").forEach((c,i)=>{
-    c.checked = localStorage.getItem("c"+i)==="true";
+/* CHECKPOINT */
+function ativarChecks(){
+  document.querySelectorAll(".artigo").forEach((artigo,i)=>{
+    const check = artigo.querySelector("input");
 
-    c.onchange=()=>{
-      localStorage.setItem("c"+i,c.checked);
-      progresso();
+    check.checked = localStorage.getItem("c"+i)==="true";
+
+    if(check.checked){
+      artigo.classList.add("lido");
+    }
+
+    check.onchange=()=>{
+      localStorage.setItem("c"+i,check.checked);
+
+      if(check.checked){
+        artigo.classList.add("lido");
+      }else{
+        artigo.classList.remove("lido");
+      }
     }
   });
-}
-
-/* PROGRESSO */
-function progresso(){
-  const c = document.querySelectorAll(".artigo input");
-  const m = [...c].filter(x=>x.checked).length;
-  progress.style.width = (m/c.length)*100+"%";
 }
 
 /* BUSCA */
