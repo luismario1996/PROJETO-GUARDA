@@ -89,16 +89,8 @@ button{
 /* CHECKPOINT VISUAL */
 .artigo.lido span{
   color:black;
-  background-color:  rgba(0, 243, 0, 0.486);
+  background-color: rgba(0, 243, 0, 0.486);
   border-radius: 10px;
-  
-}
-
-/* MARCA TEXTO */
-.highlight{
-  background:yellow;
-  padding:2px;
-  border-radius:3px;
 }
 
 </style>
@@ -107,19 +99,20 @@ button{
 <body>
 
 <div class="header">
-  <h1>📘 Código Brasileiro de Trânsito</h1>
-  <p>Lei nº 9.503/1997</p>
+ <a href="/PROJETO-GUARDA/index.html"><img src="/PROJETO-GUARDA/logo/corujex-logo.png" alt="corujex-concursos-públicos"></a>
+  <div class="titulo">
+<h1>Código Brasileiro De Trânsito</h1>
+<p>Código de Trânsito Brasileiro (Lei nº 9.503/1997)</p></div>
+ 
 </div>
 
 <div class="guia">
   <p><strong>📌 Como usar:</strong></p>
-  <p>🟡 Selecione o texto e clique em <strong>Marcar</strong>.</p>
   <p>📄 Marque os artigos com o checkbox e clique em <strong>Exportar PDF</strong>.</p>
   <p>✅ Use o checkbox para marcar artigos já estudados.</p>
 </div>
 
 <div class="controls">
-  <button onclick="marcar()">🟡 Marcar</button>
   <button onclick="resetar()">🗑 Reset</button>
   <button onclick="pdf()">📄 Exportar PDF</button>
 </div>
@@ -144,35 +137,8 @@ button{
 
 <script>
 
-/* MARCAR TEXTO */
-function marcar(){
-  const sel = window.getSelection();
-  if(!sel.rangeCount) return;
-
-  const range = sel.getRangeAt(0);
-  const span = document.createElement("span");
-  span.className = "highlight";
-
-  try{
-    span.appendChild(range.extractContents());
-    range.insertNode(span);
-    sel.removeAllRanges();
-    salvar();
-  }catch{
-    alert("Selecione apenas um trecho contínuo.");
-  }
-}
-
-/* SALVAR */
-function salvar(){
-  localStorage.setItem("conteudo", leitura.innerHTML);
-}
-
 /* LOAD */
 window.onload=()=>{
-  if(localStorage.getItem("conteudo")){
-    leitura.innerHTML = localStorage.getItem("conteudo");
-  }
   ativarChecks();
 }
 
