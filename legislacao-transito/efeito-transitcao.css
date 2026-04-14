@@ -1,0 +1,38 @@
+
+
+/* EFEITO DE TRANSIÇÃO */
+body{
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.loaded{
+  opacity: 1;
+}
+
+body.fade-out{
+  opacity: 0;
+}
+
+/* NAVEGAÇÃO */
+.navegacao{
+  display:flex;
+  justify-content:space-between;
+  max-width:900px;
+  margin:20px auto;
+}
+
+.btn-voltar, .btn-proximo{
+  padding:10px 20px;
+  background:#4f46e5;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn-voltar:hover,
+.btn-proximo:hover{
+  background:#3730a3;
+}
