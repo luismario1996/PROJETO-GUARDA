@@ -165,15 +165,15 @@ footer p {
   }
 }
 
-.centralizar {display: flex;
-flex-direction: column;
+.centralizar {
+display: flex;
+justify-content: end;
 align-items: end;
-margin-bottom: 10px;
-gap: 3px;
-max-width: 1225px;
-padding: 20px;
-margin: 0px 0px 4px 0px ;
-justify-content: end;}
+margin: auto;
+max-width: 1100px;
+
+
+}
 
 .centralizar a {padding: 5px 20px 5px 20px;
 }
