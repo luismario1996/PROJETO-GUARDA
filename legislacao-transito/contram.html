@@ -3,116 +3,113 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CTB</title>
+<title>CTB Kindle Pro</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css-generico-footer/css-generico-foooter.css">
-<link rel="shortcut icon" href="../logo/icone.ico" type="image/x-icon">
+
 <style>
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{margin:0;padding:0;box-sizing:border-box;}
+
+:root{
+  --bg:#f8fafc;
+  --card:#fff;
+  --text:#0f172a;
+  --primary:#4f46e5;
 }
 
-/* VARIÁVEIS */
-:root {
-  --bg: #f1f5f9;
-  --card: #ffffff;
-  --primary: #4f46e5;
-  --text: #0f172a;
-  --border: #e2e8f0;
-}
-
-/* BODY */
-body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow:hidden;
 }
 
 /* HEADER */
-.header {
-  text-align: center;
-  margin: 40px 0;
-}
+.header{text-align:center;padding:15px;}
 
-/* CARD */
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 12px;
-  margin: 20px;
-}
-
-/* PDF CONTAINER */
-.pdf-wrapper {
-  position: relative;
-}
-
-.pdf-container {
-  width: 100%;
-  height: 500px;
-  border-radius: 10px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-
-/* FULLSCREEN */
-.pdf-container.fullscreen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  border-radius: 0;
-}
-
-/* IFRAME */
-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* BOTÃO FULLSCREEN */
-.full-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: var(--primary);
-  color: white;
-  padding: 8px 12px;
+/* INSTRUÇÕES */
+.guia {
+  max-width: 900px;
+  margin: 10px auto;
+  background: #eef2ff;
+  border-left: 5px solid var(--primary);
+  padding: 15px;
   border-radius: 8px;
-  cursor: pointer;
   font-size: 14px;
+  line-height: 1.6;
 }
 
-/* FAVORITOS */
-.favoritos {
-  margin-top: 20px;
+.guia strong {
+  color: var(--primary);
 }
 
-.favoritos button {
-  padding: 8px 12px;
-  margin: 5px;
-  border: none;
-  background: #e2e8f0;
-  border-radius: 6px;
-  cursor: pointer;
+/* CONTROLES */
+.controls{text-align:center;}
+
+button{
+  margin:5px;
+  padding:8px 12px;
+  border:none;
+  border-radius:8px;
+  background:var(--primary);
+  color:#fff;
+  cursor:pointer;
 }
 
-.favoritos button.active {
-  background: gold;
+/* BUSCA */
+.search{
+  width:90%;
+  margin:10px auto;
+  display:block;
+  padding:8px;
+  border-radius:8px;
+  border:1px solid #ccc;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
+/* PROGRESSO */
+.progress-bar{
+  width:90%;
+  margin:10px auto;
+  height:10px;
+  background:#ddd;
+  border-radius:10px;
+}
+
+.progress{
+  height:100%;
+  background:limegreen;
+  width:0%;
+}
+
+/* LEITURA */
+.leitura{
+  height:60vh;
+  overflow-y:auto;
+  padding:15px;
+  margin:10px;
+  background:var(--card);
+  border-radius:10px;
+  user-select:text;
+  -webkit-overflow-scrolling:touch;
+}
+
+/* ARTIGOS */
+.artigo{
+  display:flex;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.artigo span{
+  line-height:1.6;
+}
+
+/* MARCA TEXTO */
+.highlight{
+  background:yellow;
+  padding:2px;
+  border-radius:3px;
 }
 
 </style>
@@ -121,84 +118,138 @@ footer {
 <body>
 
 <div class="header">
-  <h1>Código de Trânsito Brasileiro</h1>
+  <h1>📘 Código Brasileiro de Trânsito</h1>
+  <p>Lei nº 9.503/1997</p>
 </div>
 
-<div class="card">
+<!-- 🔥 GUIA DO USUÁRIO -->
+<div class="guia">
+  <p><strong>📌 Como usar:</strong></p>
 
-<h2>📄 Lei Completa</h2>
+  <p>🟡 Para marcar em amarelo: selecione um trecho do texto (arrastando o mouse ou usando o dedo) e clique em <strong>"Marcar"</strong>.</p>
 
-<div class="pdf-wrapper">
+  <p>📖 Dica: marque um artigo por vez para melhor organização dos seus estudos.</p>
 
-  <div class="full-btn" onclick="toggleFull()">⛶ Tela cheia</div>
+  <p>📄 Para exportar: selecione os artigos desejados marcando o checkbox ao lado e clique em <strong>"Exportar PDF"</strong>.</p>
+</div>
 
-  <div class="pdf-container" id="pdfBox">
-    <!-- remove barra do PDF -->
-    <iframe src="CTB2015.pdf"></iframe>
-  </div>
+<div class="controls">
+  <button onclick="marcar()">🟡 Marcar</button>
+  <button onclick="resetar()">🗑 Reset</button>
+  <button onclick="pdf()">📄 Exportar PDF</button>
+</div>
+
+<input class="search" placeholder="Buscar..." onkeyup="buscar(this.value)">
+
+<div class="progress-bar">
+  <div id="progress" class="progress"></div>
+</div>
+
+<div class="leitura" id="leitura">
+
+<div class="artigo"><input type="checkbox"><span>Art. 1º O trânsito de qualquer natureza nas vias terrestres rege-se por este Código.</span></div>
+
+<div class="artigo"><input type="checkbox"><span>§ 1º Considera-se trânsito a utilização das vias por pessoas, veículos e animais.</span></div>
+
+<div class="artigo"><input type="checkbox"><span>§ 2º O trânsito seguro é direito de todos e dever do Estado.</span></div>
+
+<div class="artigo"><input type="checkbox"><span>Art. 2º São vias terrestres as ruas, avenidas e rodovias.</span></div>
+
+<div class="artigo"><input type="checkbox"><span>Art. 3º Este Código aplica-se a qualquer veículo e condutor.</span></div>
 
 </div>
 
-</div>
-
-
-<footer class="footer">
-
-  <div class="footer-container">
-
-    <div class="footer-brand">
-    <a href="index.html"><img src="../logo/Corujex-250px-removebg-preview.png" alt=""></a>
-      <p>
-        Corujex é uma plataforma para todos os tipos de concurseiros que desejam aprender, revisar e praticar muito!
-      </p>
-    </div>
-
-    <div class="footer-box">
-      <h3>Foco</h3>
-      <p>Aprendizado contínuo</p>
-      <p>Prática diária</p>
-      <p>Revisões estratégicas</p>
-    </div>
-
-    <div class="footer-box">
-      <h3>Motivação</h3>
-      <p>Erros fazem parte do processo</p>
-      <p>Persistência leva à aprovação</p>
-      <p>Disciplina é o diferencial</p>
-    </div>
-
-    <div class="footer-box">
-      <h3>Atualizações</h3>
-      <p>Plataforma em constante evolução</p>
-      <p>Novos conteúdos em breve</p>
-      <p>Melhorias contínuas</p>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>
-      Desenvolvido por <strong>Luis Mario Fernandes de Oliveira</strong>
-    </p>
-
-    <p class="creditos">
-      Os conteúdos são de direitos dos próprios autores e estão disponíveis apenas para fins de divulgação educacional.
-    </p>
-  </div>
-
-</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
 <script>
 
-/* FULLSCREEN */
-function toggleFull() {
-  const box = document.getElementById("pdfBox");
-  box.classList.toggle("fullscreen");
+/* MARCAR TEXTO */
+function marcar(){
+  const sel = window.getSelection();
+  if(!sel.rangeCount) return;
+
+  const range = sel.getRangeAt(0);
+
+  const span = document.createElement("span");
+  span.className = "highlight";
+
+  try{
+    span.appendChild(range.extractContents());
+    range.insertNode(span);
+    sel.removeAllRanges();
+    salvar();
+  }catch{
+    alert("Selecione apenas dentro de um mesmo trecho.");
+  }
 }
 
-/* FAVORITOS */
-function favoritar(btn) {
-  btn.classList.toggle("active");
+/* SALVAR */
+function salvar(){
+  localStorage.setItem("conteudo", leitura.innerHTML);
+}
+
+/* LOAD */
+window.onload=()=>{
+  if(localStorage.getItem("conteudo")){
+    leitura.innerHTML = localStorage.getItem("conteudo");
+  }
+  checks();
+  progresso();
+}
+
+/* CHECK */
+function checks(){
+  document.querySelectorAll(".artigo input").forEach((c,i)=>{
+    c.checked = localStorage.getItem("c"+i)==="true";
+
+    c.onchange=()=>{
+      localStorage.setItem("c"+i,c.checked);
+      progresso();
+    }
+  });
+}
+
+/* PROGRESSO */
+function progresso(){
+  const c = document.querySelectorAll(".artigo input");
+  const m = [...c].filter(x=>x.checked).length;
+  progress.style.width = (m/c.length)*100+"%";
+}
+
+/* BUSCA */
+function buscar(v){
+  document.querySelectorAll(".artigo").forEach(a=>{
+    a.style.display = a.innerText.toLowerCase().includes(v.toLowerCase()) ? "flex":"none";
+  });
+}
+
+/* RESET */
+function resetar(){
+  if(confirm("Apagar tudo?")){
+    localStorage.clear();
+    location.reload();
+  }
+}
+
+/* PDF */
+function pdf(){
+  let html="";
+
+  document.querySelectorAll(".artigo").forEach(a=>{
+    if(a.querySelector("input").checked){
+      html+=a.innerHTML+"<br><br>";
+    }
+  });
+
+  if(!html){
+    alert("Marque algum artigo!");
+    return;
+  }
+
+  const temp=document.createElement("div");
+  temp.innerHTML=html;
+
+  html2pdf().from(temp).save("ctb-kindle.pdf");
 }
 
 </script>
