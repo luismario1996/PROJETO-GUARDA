@@ -74,16 +74,15 @@ button{
 
 /* LEITURA */
 .leitura{
-  max-width:900px;
-  margin:auto;
-
-  padding:15px;
 background-color:whitesmoke;
-border: 10px dashed rgba(0, 0, 0, 0.116);
+ padding:15px;
   border-radius:10px;
   user-select:text;
 }
-
+main { padding: 15px;
+  max-width:900px;
+  margin:auto;
+}
 /* ARTIGOS */
 .artigo{
   display:flex;
@@ -129,6 +128,9 @@ border: 10px dashed rgba(0, 0, 0, 0.116);
 
 <input class="search" placeholder="Buscar..." onkeyup="buscar(this.value)">
 
+
+<main>
+  
 <div class="leitura" id="leitura">
 
 <div class="artigo"><input type="checkbox"><span>Art. 1º O trânsito de qualquer natureza nas vias terrestres rege-se por este Código.</span></div>
@@ -142,6 +144,8 @@ border: 10px dashed rgba(0, 0, 0, 0.116);
 <div class="artigo"><input type="checkbox"><span>Art. 3º Este Código aplica-se a qualquer veículo e condutor.</span></div>
 
 </div>
+</main>
+
 
 <script>
 
