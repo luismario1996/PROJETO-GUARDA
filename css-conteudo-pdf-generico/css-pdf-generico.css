@@ -44,16 +44,18 @@
   height:100%;
   display:flex;
   justify-content:center;
-  align-items:center;
+  align-items:flex-start;
   overflow:auto;
-  padding:20px 60px;
-  cursor:grab;
+  padding:20px;
 }
+
+
 
 /* CANVAS CENTRAL */
 canvas{
   display:block;
   margin:auto;
+  image-rendering:auto;
 }
 
 /* SETAS */
