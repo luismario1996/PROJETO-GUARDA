@@ -22,6 +22,22 @@ function fecharPDF(){
   document.getElementById("modal").style.display="none";
 }
 
+function toggleFullscreen(){
+
+  const modal = document.getElementById("modal");
+  const btn = event.target;
+
+  if(!document.fullscreenElement){
+    modal.requestFullscreen();
+    btn.innerText = "🡼";
+  } else {
+    document.exitFullscreen();
+    btn.innerText = "⛶";
+  }
+
+}
+
+
 /* RENDER */
 function renderizarPagina(){
   pdfDoc.getPage(paginaAtual).then(page=>{
