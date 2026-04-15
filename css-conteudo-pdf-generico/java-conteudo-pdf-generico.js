@@ -28,6 +28,7 @@ function renderizarPagina(){
   pdfDoc.getPage(paginaAtual).then(page=>{
 
     const container = document.querySelector(".viewer");
+    const viewportOriginal = page.getViewport({ scale: 1 });
 
     let larguraContainer = container.clientWidth;
 
@@ -35,9 +36,17 @@ function renderizarPagina(){
       larguraContainer = window.innerWidth;
     }
 
-    const viewportOriginal = page.getViewport({ scale: 1 });
+    const isMobile = window.innerWidth <= 768;
 
-    const escalaBase = larguraContainer / viewportOriginal.width;
+    let escalaBase;
+
+    if(isMobile){
+      // 📱 MOBILE → ocupa quase toda largura
+      escalaBase = (larguraContainer * 0.95) / viewportOriginal.width;
+    } else {
+      // 💻 DESKTOP → mantém margem elegante
+      escalaBase = (larguraContainer * 0.8) / viewportOriginal.width;
+    }
 
     const deviceScale = window.devicePixelRatio || 1;
 
