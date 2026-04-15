@@ -45,13 +45,20 @@
   <p>Manual de convivência no trânsito.</p>
 </div>
 
-<!-- ✅ PDF (AQUI FOI INTEGRADO) -->
+<!-- PDF / LEI -->
 <div class="card">
-  <h2>🚦 Código de Trânsito Brasileiro (Lei nº 9.503/1997)</h2>
+  <h2>📄 Código de Processo Penal DECRETO-LEI Nº 3.689, DE 3 DE OUTUBRO DE 1941</h2>
+  <h3 style="color: rgba(0, 0, 0, 0.596);">Qual Você Prefere?</h3>
 
-  <button class="btn-pdf" onclick="abrirPDF()">
-    📖 Visualizar PDF
-  </button>
+  <a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm" target="_blank" style="text-decoration: none; color:#4f46e5;">
+    <h3>1. Versão Página Web Clique Aqui</h3>
+  </a>
+
+  <a href="https://transparenciaoficial.com/publish/%E2%80%A2Codigo%20de%20Transito-_adab0_Codigo%20de%20Transito%20Brasileiro.pdf" target="_blank" style="text-decoration: none; color:#4f46e5;">
+    <h3>2. Versão PDF Clique Aqui</h3>
+  </a>
+
+  <p style="color: red;">Estude Apenas Os Artigos Que o Edital Propõe</p>
 </div>
 
 <!-- VÍDEO -->
@@ -75,24 +82,8 @@
 </div>
 </main>
 
-<!-- ===== MODAL PDF ===== -->
-<div class="modal" id="modal">
 
-  <div class="top">
 
-    <button onclick="zoomMais()">🔍+</button>
-    <button onclick="zoomMenos()">🔍-</button>
-    <button onclick="toggleFullscreen()">⛶</button>
-
-    <button onclick="fecharPDF()">Sair</button>
-  </div>
-
-  <div class="side left" onclick="voltar()">❮</div>
-  <div class="side right" onclick="proximo()">❯</div>
-
-  <div class="viewer">
-    <canvas id="pdf-render"></canvas>
-  </div>
 
 </div>
 
