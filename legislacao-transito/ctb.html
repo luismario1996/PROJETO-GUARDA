@@ -10,6 +10,111 @@
 <link rel="stylesheet" href="../css-conteudo-generico-subpaginas/css-generico.css">
 <link rel="stylesheet" href="../css-generico-footer/css-generico-foooter.css">
 <link rel="shortcut icon" href="../logo/icone.ico" type="image/x-icon">
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc =
+"https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js";
+</script>
+
+<style>
+
+/* ===== BOTÃO PDF ===== */
+.btn-pdf{
+  margin-top:15px;
+  padding:12px 20px;
+  background:#4f46e5;
+  border:none;
+  color:#fff;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* ===== MODAL ===== */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#000;
+  z-index:9999;
+}
+
+/* TOPO */
+.top{
+  position:absolute;
+  top:10px;
+  left:10px;
+  display:flex;
+  gap:10px;
+  z-index:10;
+}
+
+.top button{
+  padding:8px 12px;
+  border:none;
+  background:#4f46e5;
+  color:#fff;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+/* VIEWER */
+.viewer{
+  width:100%;
+  height:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:auto;
+  padding:20px 60px;
+  cursor:grab;
+}
+
+/* CANVAS CENTRAL */
+canvas{
+  display:block;
+  margin:auto;
+}
+
+/* SETAS */
+.side{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:60px;
+  height:60px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:28px;
+  cursor:pointer;
+  background:#4f46e5;
+  border-radius:50%;
+  opacity:0.7;
+}
+
+.left{ left:30px; }
+.right{ right:30px; }
+
+/* MOBILE */
+@media (max-width:768px){
+  .side{
+    width:45px;
+    height:45px;
+    font-size:22px;
+  }
+
+  .left{ left:10px; }
+  .right{ right:10px; }
+
+  .viewer{
+    padding:20px 50px;
+  }
+}
+
+</style>
+
 </head>
 
 <body>
@@ -17,139 +122,142 @@
 <!-- HEADER -->
 
 <div class="header">
- <a href="/PROJETO-GUARDA/index.html"><img src="/PROJETO-GUARDA/logo/corujex-logo.png" alt="corujex-concursos-públicos"></a>
+ <a href="/PROJETO-GUARDA/index.html"><img src="/PROJETO-GUARDA/logo/corujex-logo.png"></a>
   <div class="titulo">
 <h1>🚦 Código Brasileiro De Trânsito</h1>
 <p>Código de Trânsito Brasileiro (Lei nº 9.503/1997)</p></div>
- 
 </div>
-<nav class="menu-navegacao">
 
+<nav class="menu-navegacao">
 <a href="../index.html" class="voltar">←  Disciplinas</a>
 <a href="https://www.pciconcursos.com.br/simulados/" target="_blank" class="voltar"> Questões</a>
 <a href="https://www.pciconcursos.com.br/provas/" target="_blank" class="voltar">← Simulados</a>
-  
 </nav>
+
 <main>
-
-
 
 <!-- CONCEITO -->
 <div class="card">
   <h2>📚 Código de Trânsito Brasileiro (CTB)</h2>
-
-  <p>
-    O Código de Trânsito Brasileiro (Lei nº 9.503/1997) estabelece as normas que regulamentam
-    o trânsito em todo o território nacional.
-  </p>
-
-  <p>
-    Ele define:
-  </p>
-
-  <ul>
-    <li>Direitos e deveres de condutores e pedestres</li>
-    <li>Infrações e penalidades</li>
-    <li>Regras de circulação e conduta</li>
-    <li>Competência dos órgãos de trânsito</li>
-  </ul>
+  <p>O CTB regulamenta o trânsito em todo o território nacional.</p>
 </div>
 
-<!-- EXPLICAÇÃO SIMPLES -->
+<!-- EXPLICAÇÃO -->
 <div class="card">
   <h2>🧠 Explicação Simples</h2>
-
-  <p>
-    Pense no CTB como um “manual de convivência no trânsito”.
-  </p>
-
-  <p>
-    👉 Ele organiza tudo para evitar acidentes  
-    👉 Define regras para motoristas, pedestres e agentes  
-  </p>
-
-  <p>
-    Quem descumpre → sofre penalidades.
-  </p>
+  <p>Manual de convivência no trânsito.</p>
 </div>
 
-<!-- PDF -->
+<!-- ✅ PDF (AQUI FOI INTEGRADO) -->
 <div class="card">
   <h2>🚦 Código de Trânsito Brasileiro (Lei nº 9.503/1997)</h2>
 
-  <a href="https://drive.google.com/file/d/1jFD_MQVyCLw5n1xUCF_j2en4blxcGaNk/view?usp=sharing" target="_blank" style="text-decoration: none; color:rgb(79, 70, 229);"><h3>Clique Aqui</h3></a>
-    <p style="color: red;">Estude os artigos mais cobrados em prova</p>
-    <a href="./capitulo1.html">Versão leitura BETA</a>
+  <button class="btn-pdf" onclick="abrirPDF()">
+    📖 Visualizar PDF
+  </button>
 </div>
-
-
 
 <!-- VÍDEO -->
 <div class="card">
   <h2>🎥 Aula Complementar</h2>
-
   <div class="video">
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=IDMiMHWM9ELm70AH&amp;list=PLq_dTqrrG6QIJRixVqvnmGzDjkoc3q9nP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   <iframe width="560" height="315"
+   src="https://www.youtube.com/embed/videoseries?list=PLq_dTqrrG6QIJRixVqvnmGzDjkoc3q9nP"
+   allowfullscreen></iframe>
   </div>
 </div>
 
- <div class="centralizar">
-
-
-  
-  <div class="voltar-proxiimo"><a href="../legislacao-transito.html" class="voltar">← </a></div>
-
-
-</div>
 </main>
 
-<footer class="footer">
+<!-- ===== MODAL PDF ===== -->
+<div class="modal" id="modal">
 
-  <div class="footer-container">
-
-    <div class="footer-brand">
- <a href="/PROJETO-GUARDA/index.html"><img src="/PROJETO-GUARDA/logo/corujex-logo.png" alt="corujex-concursos-públicos"></a>
-      <p>
-        Corujex é uma plataforma para todos os tipos de concurseiros que desejam aprender, revisar e praticar muito!
-      </p>
-    </div>
-
-    <div class="footer-box">
-      <h3>Foco</h3>
-      <p>Aprendizado contínuo</p>
-      <p>Prática diária</p>
-      <p>Revisões estratégicas</p>
-    </div>
-
-    <div class="footer-box">
-      <h3>Motivação</h3>
-      <p>Erros fazem parte do processo</p>
-      <p>Persistência leva à aprovação</p>
-      <p>Disciplina é o diferencial</p>
-    </div>
-
-    <div class="footer-box">
-      <h3>Atualizações</h3>
-      <p>Plataforma em constante evolução</p>
-      <p>Novos conteúdos em breve</p>
-      <p>Melhorias contínuas</p>
-    </div>
-
+  <div class="top">
+    <button onclick="zoomMais()">🔍+</button>
+    <button onclick="zoomMenos()">🔍-</button>
+    <button onclick="fecharPDF()">✖</button>
   </div>
 
-  <div class="footer-bottom">
-    <p>
-      Desenvolvido por <strong>Luis Mario Fernandes de Oliveira</strong>
-    </p>
+  <div class="side left" onclick="voltar()">❮</div>
+  <div class="side right" onclick="proximo()">❯</div>
 
-    <p class="creditos">
-      Os conteúdos são de direitos dos próprios autores e estão disponíveis apenas para fins de divulgação educacional.
-    </p>
+  <div class="viewer">
+    <canvas id="pdf-render"></canvas>
   </div>
 
-</footer>
+</div>
+
+<script>
+
+let pdfDoc=null;
+let paginaAtual=1;
+let escala=1.2;
+
+const canvas=document.getElementById("pdf-render");
+const ctx=canvas.getContext("2d");
+
+/* ABRIR */
+function abrirPDF(){
+  document.getElementById("modal").style.display="block";
+
+  pdfjsLib.getDocument("CTB.pdf").promise.then(pdf=>{
+    pdfDoc=pdf;
+    paginaAtual=1;
+    renderizarPagina();
+  });
+}
+
+/* FECHAR */
+function fecharPDF(){
+  document.getElementById("modal").style.display="none";
+}
+
+/* RENDER */
+function renderizarPagina(){
+  pdfDoc.getPage(paginaAtual).then(page=>{
+
+    let viewport=page.getViewport({scale:escala});
+
+    canvas.height=viewport.height;
+    canvas.width=viewport.width;
+
+    page.render({
+      canvasContext:ctx,
+      viewport:viewport
+    });
+
+  });
+}
+
+/* NAVEGAÇÃO */
+function proximo(){
+  if(paginaAtual<pdfDoc.numPages){
+    paginaAtual++;
+    renderizarPagina();
+  }
+}
+
+function voltar(){
+  if(paginaAtual>1){
+    paginaAtual--;
+    renderizarPagina();
+  }
+}
+
+/* ZOOM */
+function zoomMais(){
+  escala+=0.2;
+  renderizarPagina();
+}
+
+function zoomMenos(){
+  if(escala>0.6){
+    escala-=0.2;
+    renderizarPagina();
+  }
+}
+
+</script>
 
 </body>
-
-
 </html>
